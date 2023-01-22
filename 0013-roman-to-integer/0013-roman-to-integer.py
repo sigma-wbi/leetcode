@@ -8,7 +8,7 @@ class Solution:
             if i == 0:          #첫번째는 그냥 더하기 i-1인덱스가 없으므로
                 res += dic[s[i]]
             else:
-                if dic[s[i]] < dic[s[i-1]] :
+                if dic[s[i]] < dic[s[i-1]] :        # 뒤집은 현재 문자열이 이전 문자열보다 작으면 지금꺼는 합에서 뺀다
                     res -= dic[s[i]]
                 else :
                     res += dic[s[i]]
