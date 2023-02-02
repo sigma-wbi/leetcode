@@ -1,3 +1,5 @@
+'''
+내 풀이  O(n2) -> 느리다
 class Solution:
     def convert(self, s:str ,numRows:int) -> str:
         if numRows == 1 or len(s) == 1 :
@@ -39,3 +41,22 @@ class Solution:
                     ans += ans_list[row][col]
 
         return ans
+'''
+# 빠른 풀이 O(n)
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        index_dict = dict()
+        zigzag_index = 0
+        down = 1  # Down flag
+        up = -1  # Up flag
+        move = 0
+        for character in s:
+            if zigzag_index == 0:  # Down
+                move = down
+            elif zigzag_index == numRows - 1:  # Up
+                move = up
+
+            index_dict[zigzag_index] = index_dict.get(zigzag_index, '') + character
+            zigzag_index +=move  # Move index
+
+        return ''.join(index_dict.values())
