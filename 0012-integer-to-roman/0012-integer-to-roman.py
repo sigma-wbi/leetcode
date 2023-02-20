@@ -11,6 +11,7 @@ class Solution:
                 if num >= key:
                     roman += romanDict[key]     # 그리고 뺀만큼을 로마로 변환하여 문자열에 넣어줌
                     num=num-key
-                    break
+                    break                       # 2985 의 경우 1000을 뺐다고해서 끝이 아님 1000을 또빼줘야함 
+                                                # break 가 없으면 1000을 뺀후 900으로 넘어가기 때문에 break 필요
         
         return roman
