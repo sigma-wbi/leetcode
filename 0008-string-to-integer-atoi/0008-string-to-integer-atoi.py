@@ -65,3 +65,40 @@ class Solution:
             
              
         return result
+
+'''
+isdigit() 함수를 사용한 풀이
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        index = 0
+        sign = 1
+        upper_bound = 2 ** 31 - 1
+        lower_bound = -(2 ** 31)
+        result = 0
+
+        # condition 1 -> ignore any whitespace
+        while index < len(s) and s[index] == ' ':
+            index += 1
+        
+        # condition 2 -> check whether next char is plus or minus
+        if index < len(s) and s[index] == '-':
+            sign = -1
+            index += 1
+        elif index < len(s) and s[index] == '+':
+            index += 1
+        
+        # condition 3 -> read in until non-digit is found
+        while index < len(s) and s[index].isdigit():
+            result = result * 10 + int(s[index])
+            index += 1
+
+        result = result * sign
+
+        # condition 4 -> check if the result is within 32-bit signed range.
+        if result < lower_bound:
+            return lower_bound
+        if result > upper_bound:
+            return upper_bound
+
+        return result
+'''
