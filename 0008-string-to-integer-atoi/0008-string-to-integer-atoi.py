@@ -12,6 +12,7 @@ class Solution:
         # 선행 공백 판별
         while s[0] == ' ':
             s = s[1:]
+            # 문자열이 전부 공백일경우 (공백 다 뺐을때 문자열이 없으면)
             if len(s) == 0 :
                 return 0
             
@@ -30,7 +31,7 @@ class Solution:
             int(s[0])
         except :    
             b = False
-        
+        # 공백, 부호 제거후 다음 문자열이 숫자가 아니면 볼필요없이 0으로 반환
         if b == False:
             return 0
         
@@ -41,10 +42,11 @@ class Solution:
                 break                       # 형변환때 에러가 발생할시 거기까지.(문자열 원소인경우)
             
         # 선행 0 제거
-        if sum(intS) == 0:
-            return 0
         while intS[0] == 0:                 # 리스트의 맨앞 원소가 0이 아닐때까지 맨앞의 0을 제거
             intS = intS[1:]
+            # 담긴 숫자가 전부 0일경우 (0 다 뺐을때 문자열이 없으면)
+            if len(intS) == 0 :
+                return 0
         
         # 결과 도출
         newS = ""                           # 리스트 안의 원소를 문자열로 바꾸기 위함
