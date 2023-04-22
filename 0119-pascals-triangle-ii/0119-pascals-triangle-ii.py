@@ -11,3 +11,6 @@ class Solution:
                 res[r][c] = res[r - 1][c - 1] + res[r - 1][c]
                 
         return res[rowIndex]
+    
+    
+    # 삼각형 그려보면서 r,c에 무슨 인덱스가 들어가아하는지 파악
