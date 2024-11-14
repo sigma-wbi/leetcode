@@ -26,5 +26,6 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Database
 |  |
 | ------- |
+| [0181-employees-earning-more-than-their-managers](https://github.com/sigma-wbi/leetcode/tree/master/0181-employees-earning-more-than-their-managers) |
 | [0196-delete-duplicate-emails](https://github.com/sigma-wbi/leetcode/tree/master/0196-delete-duplicate-emails) |
 <!---LeetCode Topics End-->
